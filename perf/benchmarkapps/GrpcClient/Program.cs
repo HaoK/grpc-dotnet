@@ -390,7 +390,7 @@ namespace GrpcClient
                     {
                         var basePath = Path.GetDirectoryName(typeof(Program).Assembly.Location);
                         var certPath = Path.Combine(basePath!, "Certs", "client.pfx");
-                        var clientCertificate = new X509Certificate2(certPath, "1111");
+                        var clientCertificate = new X509Certificate2(certPath, "pass");
                         httpClientHandler.ClientCertificates.Add(clientCertificate);
                     }
 

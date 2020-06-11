@@ -23,6 +23,7 @@ using Common;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Microsoft.AspNetCore.Server.Kestrel.Https;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -84,6 +85,8 @@ namespace GrpcAspNetCoreServer
                                     if (enableCertAuth)
                                     {
                                         httpsOptions.ClientCertificateMode = Microsoft.AspNetCore.Server.Kestrel.Https.ClientCertificateMode.AllowCertificate;
+                                                            httpsOptions.AllowAnyClientCertificate();
+
                                     }
                                 });
                             }

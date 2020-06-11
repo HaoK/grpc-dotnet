@@ -60,7 +60,7 @@ namespace GrpcAspNetCoreServer
                         // Not recommended in production environments. The example is using a self-signed test certificate.
                         options.RevocationMode = X509RevocationMode.NoCheck;
                         options.AllowedCertificateTypes = CertificateTypes.All;
-                    });
+                    }).AddCertificateCache();
             }
         }
 
